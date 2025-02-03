@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataSrcDataModelFieldMap xmlns="http://soap.sforce.com/2006/04/metadata">
+    <filterApplied>false</filterApplied>
+    <masterLabel>AASW_Agent_BotTransformed_event_DLO1Meta_KeysTransformed_event_DMOMeta_KeysMErbKxhdbvCODsc</masterLabel>
+    <sourceField>Transformed_event_DLO1.Meta_Keys__c</sourceField>
+    <targetField>Transformed_event_DMO__dlm.Meta_Keys__c</targetField>
+    <templateVersion>1</templateVersion>
+    <versionNumber>1.0</versionNumber>
+</DataSrcDataModelFieldMap>

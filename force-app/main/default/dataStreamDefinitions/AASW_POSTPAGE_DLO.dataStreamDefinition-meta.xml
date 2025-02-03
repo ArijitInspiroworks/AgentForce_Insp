@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataStreamDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <areHeadersIncludedInFile>false</areHeadersIncludedInFile>
+    <bulkIngest>true</bulkIngest>
+    <creationType>Custom</creationType>
+    <dataConnector>Test_RDS_Server</dataConnector>
+    <dataConnectorType>AwsRdsMySql</dataConnectorType>
+    <dataPlatformDataSetItemName>CONNECTORSFRAMEWORK</dataPlatformDataSetItemName>
+    <dataSource>AwsRdsMySql_Test_RDS_Server</dataSource>
+    <isLimitedToNewFiles>false</isLimitedToNewFiles>
+    <isMissingFileFailure>false</isMissingFileFailure>
+    <masterLabel>AASW_POSTPAGE_DLO</masterLabel>
+    <mktDataLakeObject>AASW_POSTPAGE_DLO__dll</mktDataLakeObject>
+    <mktDataTranObject>AASW_POSTPAGE_DLO</mktDataTranObject>
+    <parameters>
+        <fullName>AASW_POSTPAGE_DLO_objectName</fullName>
+        <paramName>objectName</paramName>
+        <value>wp_post_view_2</value>
+    </parameters>
+</DataStreamDefinition>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSrcTrgtRelationship xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <definitionCreationType>System</definitionCreationType>
+    <lookupFieldName>Trasformed_POSTPAGE_DMO_chunk__dlm.rel_1736756005728_end__c</lookupFieldName>
+    <masterLabel>Trasformed_POSTPAGE_DMO_chunk_SourceRecordId_map_Trasformed_POSTPAGE_DMO_ID_1736756005728</masterLabel>
+    <owner>DataCloud</owner>
+    <relationshipCardinality>ManyToOne</relationshipCardinality>
+    <sourceFieldName>Trasformed_POSTPAGE_DMO_chunk__dlm.SourceRecordId__c</sourceFieldName>
+    <targetEntity xsi:nil="true"/>
+    <targetFieldName>Trasformed_POSTPAGE_DMO__dlm.ID__c</targetFieldName>
+</FieldSrcTrgtRelationship>
