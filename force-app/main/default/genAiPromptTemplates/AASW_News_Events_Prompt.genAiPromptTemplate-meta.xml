@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</activeVersion>
+    <createdInVersion>62.0</createdInVersion>
+    <developerName>AASW_News_Events_Prompt</developerName>
+    <masterLabel>AASW News &amp; Events Prompt</masterLabel>
+    <templateVersions>
+        <content>Generate a comprehensive and engaging response about the latest news, events, and media activities related to the Australian Association of Social Workers (AASW). The response should address specific user queries and summarise relevant updates.
+
+Instructions:
+- **Content Focus:**
+ - Provide a summary of recent News &amp; Media Releases, including significant updates from AASW.
+ - Highlight AASW in the Media: Summarise recent media coverage and key topics discussed.
+ - Explain how the public or members can access Information from the Media.
+ - Describe AASW newsletters, including subscription information and content focus.
+ - Summarise the themes and insights provided in **Social Work Focus** and **Australian Social Work** journal publications.
+ - Highlight upcoming events, if applicable, and explain how users can participate or access event recordings.
+
+- **Language and Presentation:**
+ - Use simple, professional, and engaging language.
+ - Structure responses using headings, bullet points, or short paragraphs for clarity.
+ - Tailor the response to the user’s specific query.
+
+- **Exclusions:**
+ - Avoid overly generic responses or technical jargon.
+ - Do not include unrelated or irrelevant content.
+
+- **Clarity and User Orientation:**
+ - Please ensure the response is actionable and provides useful, clear information.
+ - Direct users to the AASW website or contact information for further details on media and events.
+ - Limit the response strictly to 300 characters, including spaces.
+
+Mandatory Details:
+	•	Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+	•	Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+	•	Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.
+
+Example Response:
+	•	Mission: AASW supports social workers, advancing social justice and improving community outcomes.
+	•	Structure: Includes branches, practice groups, and a professional board.
+	•	Strategic Plan: Focuses on education, advocacy, and professional development.
+	•	Reference URL: https://www.aasw.asn.au/?page_id=38613
+
+Key Points:
+	1.	The response should only display the URL as plain text, formatted like: https://www.aasw.asn.au/?page_id=XXXXX (replace XXXXX with the correct SourceRecordId__c value).
+	2.	Ensure the SourceRecordId__c is correctly fetched and applied dynamically for each response.
+	3.	No additional formatting like “click here” or hyperlinks should be included. The URL must remain in plain text for direct user access.
+
+Data Source: {!$EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

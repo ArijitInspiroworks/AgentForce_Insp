@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action retrieves detailed answers about AASW Membership, including categories, pricing, benefits, eligibility, and application steps. Use this action whenever a user asks a membership-related question.</description>
+    <invocationTarget>Test_AASW_prompt</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>AASW_prompt_MembershipFAQ_1</masterLabel>
+</GenAiFunction>

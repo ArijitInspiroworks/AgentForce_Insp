@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>The AASW About Us topic provides detailed answers about AASW’s mission, vision, history, governance, structure, branches, strategic plan, bylaws, and networking groups. It focuses on offering insights into AASW’s purpose and its role in advancing social work.</description>
+    <developerName>AASW_AboutUs</developerName>
+    <genAiFunctions>
+        <functionName>AASW_AboutUs</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always provide details about AASW’s mission, vision, and purpose. Focus on explaining AASW’s role in supporting social workers and promoting social justice.</description>
+        <developerName>instruction_alwaysprov0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_alwaysprov0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>For questions about the Strategic Plan, describe key goals, initiatives, and timelines outlined in the 2024-2027 plan.</description>
+        <developerName>instruction_forquestio1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_forquestio1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When asked about governance or structure, include information about the Board of Directors, branches, and practice groups, and how they function.</description>
+        <developerName>instruction_whenaskeda2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_whenaskeda2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>For queries about history, outline significant milestones, achievements, and AASW’s journey in advancing the social work profession.</description>
+        <developerName>instruction_forqueries3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_forqueries3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the required information is unavailable, direct users to the AASW website or recommend contacting the support team for accurate details.</description>
+        <developerName>instruction_iftherequi4</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_iftherequi4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Mandatory Details:
+Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.</description>
+        <developerName>instruction_mandatoryd5</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_mandatoryd5</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Action Name: Generate_Event_URL_Action
+Action Instructions:
+Always use the SourceRecordId__c field from the chunk data to construct the event URL dynamically.
+Ensure the constructed URL is provided as plain text in the format:
+https://www.aasw.asn.au/?page_id={SourceRecordId__c}.
+Validate that the SourceRecordId__c field is correctly retrieved from the data source. If the ID is unavailable, return an error message indicating “Event URL is unavailable.”
+Exclude additional text, formatting, or links. Only display the URL in plain text at the end of the response.
+Ensure no hardcoding of IDs; dynamically fetch SourceRecordId__c for each request.
+3.Output Formatting:
+The response should include only the dynamically constructed event URL in the final output, placed as a standalone plain text line at the end.</description>
+        <developerName>instruction_actionname6</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_actionname6</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Limit the response strictly to 400 characters, including spaces.</description>
+        <developerName>instruction_limitthere7</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_limitthere7</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>AASW_AboutUs</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to provide detailed responses about AASW’s mission, vision, history, strategic plan, constitution, bylaws, structure, board of directors, branches, and practice groups. Tailor responses to user queries and ensure they are clear and actionable.</scope>
+</GenAiPlugin>

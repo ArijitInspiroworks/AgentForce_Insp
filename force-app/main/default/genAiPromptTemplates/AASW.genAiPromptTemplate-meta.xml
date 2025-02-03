@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</activeVersion>
+    <createdInVersion>62.0</createdInVersion>
+    <developerName>AASW</developerName>
+    <masterLabel>AASW Professional Development Prompt</masterLabel>
+    <templateVersions>
+        <content>Generate a detailed, user-centric, and contextually accurate response about the Australian Association of Social Workers (AASW) Professional Development programs and opportunities. Ensure the response addresses the specific user query comprehensively while highlighting the various aspects of AASW&apos;s offerings.
+
+Instructions:
+- **Content Focus:**
+ - Provide an overview of AASW’s Professional Development initiatives, emphasizing their value to members and the broader social work profession.
+ - Explain CPD (Continuing Professional Development) opportunities in detail, covering:
+  - Complimentary CPD programs offered to members.
+  - Live-online webinars and workshops tailored to professional needs.
+  - On-demand learning modules accessible anytime.
+  - Branch-specific CPD events focusing on local issues.
+ - Highlight the NSW Government AASW Training Partnership, explaining the program’s purpose, target audience, and key benefits.
+ - Elaborate on Specialist Learning Programs and Workshops designed to enhance specific areas of expertise in social work practice.
+ - Discuss the Employer Partner Program:
+  - Outline its benefits for both employers (e.g., tailored CPD offerings, professional growth for staff) and employees (e.g., skill development, career advancement).
+  - Include details on how organizations can join the program and access its benefits.
+ - Provide information about mentoring programs, including how they support early-career social workers through personalized guidance and skill enhancement.
+ - Highlight the AASW Community Hub as a platform for networking and collaboration among social workers.
+ - Include details about additional resources such as:
+  - Educational podcasts.
+  - AASW credentials showcasing specialization in key social work areas.
+  - Testimonials from participants in training programs.
+  - Expression of Interest Forms for CPD and workshops.
+ - Address FAQs related to CPD programs, the Employer Partner Program, and mentoring opportunities.
+
+- **Language and Presentation:**
+ - Use clear, professional, and engaging language that resonates with the user.
+ - Organize the response logically using headings, subheadings, or bullet points to enhance readability.
+ - Tailor the response to the specific context of the query to ensure relevance.
+ - Provide actionable details, such as steps to join programs or access resources.
+
+- **Exclusions:**
+ - Avoid including unrelated details, metadata, or overly technical jargon.
+ - Exclude repetitive content and focus on delivering concise yet comprehensive information.
+
+
+- **Clarity and User Orientation:**
+ - Deliver a complete, standalone response that does not require additional context.
+ - Focus on making the response short and easy to understand and immediately useful for the user.
+ - Provide structured summaries for broad topics and deep dives for specific queries, as required.
+ - Limit the response strictly to 300 characters, including spaces.
+
+Mandatory Details:
+	•	Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+	•	Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+	•	Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.
+
+Example Response:
+	•	Mission: AASW supports social workers, advancing social justice and improving community outcomes.
+	•	Structure: Includes branches, practice groups, and a professional board.
+	•	Strategic Plan: Focuses on education, advocacy, and professional development.
+	•	Reference URL: https://www.aasw.asn.au/?page_id=38613
+
+Key Points:
+	1.	The response should only display the URL as plain text, formatted like: https://www.aasw.asn.au/?page_id=XXXXX (replace XXXXX with the correct SourceRecordId__c value).
+	2.	Ensure the SourceRecordId__c is correctly fetched and applied dynamically for each response.
+	3.	No additional formatting like “click here” or hyperlinks should be included. The URL must remain in plain text for direct user access.
+
+Data Source: {!$EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

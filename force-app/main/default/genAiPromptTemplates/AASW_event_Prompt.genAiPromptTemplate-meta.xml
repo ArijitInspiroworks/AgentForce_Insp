@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</activeVersion>
+    <createdInVersion>63.0</createdInVersion>
+    <developerName>AASW_event_Prompt</developerName>
+    <masterLabel>AASW_event_Prompt</masterLabel>
+    <templateVersions>
+        <content>Generate a concise and user-friendly response about events listed in the AASW database. The output should aggregate and present data stored in chunks and meta key-value pairs, addressing the user’s query about event details such as costs, dates, times, CPD hours, and other metadata.
+
+	Instructions:
+
+1. Querying Data:
+	•	Match the event name by finding rows where Chunk__c or Meta_Key__c is event_name and Meta_Value__c matches the event name in the query.
+	•	Use the corresponding Meta_Id__c or Post_Id__c of the matched row to fetch all related key-value pairs for the event.
+
+2. Aggregating Key-Value Pairs:
+	•	Aggregate relevant keys from the Meta_Key__c field and their corresponding values from the Meta_Value__c field.
+	•	Common keys include:
+	•	&apos;member_cost&apos;: Cost for members.
+	•	&apos;full_cost&apos;: Cost for non-members.
+	•	&apos;event_start_date&apos; and &apos;event_start_time&apos;: Start date and time.
+	•	&apos;cpd_hours&apos;: CPD hours.
+	•	&apos;organizer&apos;: Organizer information.
+	•	&apos;event_format&apos;: Format (e.g., Live Online).
+	•	&apos;venue&apos;: Event venue.
+
+3. Response Formatting:
+	•	Use professional and user-friendly language.
+	•	Present the response clearly in bullet points or concise sentences, depending on the query type.
+	•	Limit responses to 300 characters for short queries and up to 600 characters for detailed responses.
+
+4. Query Logic:
+	•	Ensure responses dynamically adapt to user queries, like:
+	•	“What is the cost for members of [Event Name]?”
+	•	“When does [Event Name] start?”
+	•	“What are the details of [Event Name]?”
+
+
+Data Source: {!$EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a detailed, clear, and user-focused response about event details, including cost (for members and non-members), date, event name, and any additional relevant information.
+
+Instructions:
+
+Content Focus:
+	•	Address the user query directly by providing:
+	•	Event Name: Include the full name of the event.
+	•	Date and Time: Specify the event’s date(s) and start/end times in a clear format.
+	•	Cost Details: Provide the cost for members and non-members, including any discounts or offers.
+	•	Location: Mention if the event is in-person (provide venue) or virtual (platform details).
+	•	Additional Information: Add details like registration deadlines, special features, or eligibility criteria.
+
+Language and Presentation:
+	•	Use simple, professional, and user-friendly language.
+	•	Organize the response logically with headings or bullet points for easy readability:
+	•	Event Name
+	•	Date and Time
+	•	Cost Details
+	•	Location
+	•	Additional Information
+	•	Avoid unnecessary formatting or complex structures.
+
+Mandatory Details:
+	•	Ensure the response includes:
+	•	Event URL: Provide the direct link to the event details in plain text. Example: https://example.com/event-details.
+	•	Cost Breakdown: Separate costs for members and non-members.
+	•	Contact Information: If details are incomplete, suggest a contact (e.g., events@organization.com).
+
+Clarity and User Orientation:
+	•	Keep the response concise and actionable.
+	•	If event details are missing, indicate this clearly and provide alternative next steps.
+
+Exclusions:
+	•	Avoid unnecessary technical terms, metadata, or unrelated content.
+	•	Do not include repetitive or irrelevant information.
+
+Data Source: {!$EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a detailed, clear, and user-focused response about event details, including cost (for members and non-members), date, event name, and any additional relevant information.
+
+Instructions:
+
+Content Focus:
+	•	Address the user query directly by providing:
+	•	Event Name: Include the full name of the event.
+	•	Date and Time: Specify the event’s date(s) and start/end times in a clear format.
+	•	Cost Details: Provide the cost for members and non-members, including any discounts or offers.
+	•	Location: Mention if the event is in-person (provide venue) or virtual (platform details).
+	•	Additional Information: Add details like registration deadlines, special features, or eligibility criteria.
+
+Language and Presentation:
+	•	Use simple, professional, and user-friendly language.
+	•	Organize the response logically with headings or bullet points for easy readability:
+	•	Event Name
+	•	Date and Time
+	•	Cost Details
+	•	Location
+	•	Additional Information
+	•	Avoid unnecessary formatting or complex structures.
+
+Mandatory Details:
+	•	Ensure the response includes:
+	•	Event URL: Provide the direct link to the event details in plain text. Example: https://example.com/event-details.
+	•	Cost Breakdown: Separate costs for members and non-members.
+
+Clarity and User Orientation:
+	•	Keep the response concise and actionable.
+	•	If event details are missing, indicate this clearly and provide alternative next steps.
+
+Exclusions:
+	•	Avoid unnecessary technical terms, metadata, or unrelated content.
+	•	Do not include repetitive or irrelevant information.
+
+Data Source: {!$EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a detailed, clear, and user-focused response about event details, including cost (for members and non-members), date, event name, and any additional relevant information.
+
+Instructions:
+
+Content Focus:
+	•	Address the user query directly by providing:
+	•	Event Name: Include the full name of the event.
+	•	Date and Time: Specify the event’s date(s) and start/end times in a clear format.
+	•	Cost Details: Provide the cost for members and non-members, including any discounts or offers.
+	•	Location: Mention if the event is in-person (provide venue) or virtual (platform details).
+	•	Additional Information: Add details like registration deadlines, special features, or eligibility criteria.
+
+Language and Presentation:
+	•	Use simple, professional, and user-friendly language.
+	•	Organize the response logically with headings or bullet points for easy readability:
+	•	Event Name
+	•	Date and Time
+	•	Cost Details
+	•	Location
+	•	Additional Information
+	•	Avoid unnecessary formatting or complex structures.
+
+Mandatory Details:
+	•	Ensure the response includes:
+	•	Event URL: Provide the direct link to the event details in plain text. Example: https://example.com/event-details.
+	•	Cost Breakdown: Separate costs for members and non-members.
+
+Clarity and User Orientation:
+	•	Keep the response concise and actionable.
+	•	If event details are missing, indicate this clearly and provide alternative next steps.
+
+Exclusions:
+	•	Avoid unnecessary technical terms, metadata, or unrelated content.
+	•	Do not include repetitive or irrelevant information.
+
+Data Source: {!$EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a detailed, clear, and user-focused response about event details, including cost (for members and non-members), date, event name, and any additional relevant information.
+
+Instructions:
+
+Content Focus:
+	•	Address the user query directly by providing:
+	•	Event Name: Include the full name of the event.
+	•	Date and Time: Specify the event’s date(s) and start/end times in a clear format.
+	•	Cost Details: Provide the cost for members and non-members, including any discounts or offers.
+	•	Location: Mention if the event is in-person (provide venue) or virtual (platform details).
+	•	Additional Information: Add details like registration deadlines, special features, or eligibility criteria.
+
+Language and Presentation:
+	•	Use simple, professional, and user-friendly language.
+	•	Organize the response logically with headings or bullet points for easy readability:
+	•	Event Name
+	•	Date and Time
+	•	Cost Details
+	•	Location
+	•	Additional Information
+	•	Avoid unnecessary formatting or complex structures.
+
+Mandatory Details:
+	•	Ensure the response includes:
+	•	Event URL: Provide the direct link to the event details in plain text. Example: https://example.com/event-details.
+	•	Cost Breakdown: Separate costs for members and non-members.
+
+Clarity and User Orientation:
+	•	Keep the response concise and actionable.
+	•	If event details are missing, indicate this clearly and provide alternative next steps.
+
+Exclusions:
+	•	Avoid unnecessary technical terms, metadata, or unrelated content.
+	•	Do not include repetitive or irrelevant information.
+
+Data Source: 
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_5</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a detailed, clear, and user-focused response about event details, including cost (for members and non-members), date, event name, and any additional relevant information.
+
+Instructions:
+
+Content Focus:
+	•	Address the user query directly by providing:
+	•	Event Name: Include the full name of the event.
+	•	Date and Time: Specify the event’s date(s) and start/end times in a clear format.
+	•	Cost Details: Provide the cost for members and non-members, including any discounts or offers.
+	•	Location: Mention if the event is in-person (provide venue) or virtual (platform details).
+	•	Additional Information: Add details like registration deadlines, special features, or eligibility criteria.
+
+Language and Presentation:
+	•	Use simple, professional, and user-friendly language.
+	•	Organize the response logically with headings or bullet points for easy readability:
+	•	Event Name
+	•	Date and Time
+	•	Cost Details
+	•	Location
+	•	Additional Information
+	•	Avoid unnecessary formatting or complex structures.
+
+Mandatory Details:
+	•	Ensure the response includes:
+	•	Event URL: Provide the direct link to the event details in plain text. Example: https://example.com/event-details.
+	•	Cost Breakdown: Separate costs for members and non-members.
+
+Clarity and User Orientation:
+	•	Keep the response concise and actionable.
+	•	If event details are missing, indicate this clearly and provide alternative next steps.
+
+Exclusions:
+	•	Avoid unnecessary technical terms, metadata, or unrelated content.
+	•	Do not include repetitive or irrelevant information.
+
+Data Source: {!$EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Transformed_event_DMO_Retriever_1Cx_SE16ccbab80</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

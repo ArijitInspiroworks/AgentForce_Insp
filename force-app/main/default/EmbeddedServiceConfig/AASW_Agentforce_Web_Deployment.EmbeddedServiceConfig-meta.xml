@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedServiceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <areGuestUsersAllowed>false</areGuestUsersAllowed>
+    <branding>EmbeddedServiceConfig_BrandingSet_194171fdd5e</branding>
+    <deploymentFeature>EmbeddedMessaging</deploymentFeature>
+    <deploymentType>Web</deploymentType>
+    <embeddedServiceCustomComponents>
+        <componentBundleType>LightningComponentBundle</componentBundleType>
+        <customComponent>customHeaderAgent</customComponent>
+        <customComponentType>MIAW_Header</customComponentType>
+    </embeddedServiceCustomComponents>
+    <embeddedServiceMessagingChannel>
+        <isEnabled>true</isEnabled>
+        <messagingChannel>AASW_AgentBot</messagingChannel>
+        <shouldShowDeliveryReceipts>false</shouldShowDeliveryReceipts>
+        <shouldShowEmojiSelection>false</shouldShowEmojiSelection>
+        <shouldShowReadReceipts>false</shouldShowReadReceipts>
+        <shouldShowTypingIndicators>true</shouldShowTypingIndicators>
+        <shouldStartNewLineOnEnter>false</shouldStartNewLineOnEnter>
+    </embeddedServiceMessagingChannel>
+    <isEnabled>true</isEnabled>
+    <isTermsAndConditionsEnabled>false</isTermsAndConditionsEnabled>
+    <isTermsAndConditionsRequired>false</isTermsAndConditionsRequired>
+    <masterLabel>AASW_Agentforce_Web_Deployment</masterLabel>
+    <shouldHideAuthDialog>false</shouldHideAuthDialog>
+    <site>ESW_AASW_Agentforce_Web_De_17352891653691</site>
+</EmbeddedServiceConfig>

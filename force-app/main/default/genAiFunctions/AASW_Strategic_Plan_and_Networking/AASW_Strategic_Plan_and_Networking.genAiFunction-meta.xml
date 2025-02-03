@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action provides detailed information about the AASW Strategic Plan 2024-2027 and networking opportunities. Use it to answer queries about strategic objectives, key initiatives, practice groups, and networking resources. Ensure the user’s input is passed to the prompt for tailored responses.</description>
+    <invocationTarget>AASW_Strategic_Plan_and_Networking</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>AASW Strategic Plan and Networking</masterLabel>
+</GenAiFunction>

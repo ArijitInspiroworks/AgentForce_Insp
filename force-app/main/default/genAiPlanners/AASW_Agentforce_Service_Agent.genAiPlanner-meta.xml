@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlanner xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The AASW Agent is a virtual assistant developed to support current and prospective members, as well as the general public, by delivering prompt and accurate information about the association’s services, membership options, professional development opportu</description>
+    <genAiFunctions>
+        <genAiFunctionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</genAiFunctionName>
+    </genAiFunctions>
+    <genAiPlugins>
+        <genAiPluginName>AASW_AboutUs</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>AASW_Education_Employment_Prompt</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>AASW_Event</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>AASW_News_Events_Prompt</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>AASW_Professional_Development_Prompt</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>AASW_Strategic_Plan_and_Networking</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>Membership_FAQ</genAiPluginName>
+    </genAiPlugins>
+    <masterLabel>AASW_Agentforce Service Agent</masterLabel>
+    <plannerType>AiCopilot__ReAct</plannerType>
+</GenAiPlanner>

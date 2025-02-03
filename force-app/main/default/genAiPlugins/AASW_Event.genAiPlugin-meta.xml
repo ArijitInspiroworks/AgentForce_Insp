@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic provides detailed responses about AASW events, including event name, date, costs for members and non-members, venue, registration deadlines, and other event-specific details.</description>
+    <developerName>AASW_Event</developerName>
+    <genAiFunctions>
+        <functionName>AASW_event_Prompt</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always provide details about the event name, date, and cost for both members and non-members. Include additional details like venue, registration deadlines, or any special offers.</description>
+        <developerName>instruction_alwaysprov0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_alwaysprov0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the event is virtual, mention the platform details (e.g., Zoom or WebEx) and provide any required access instructions.</description>
+        <developerName>instruction_iftheevent1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_iftheevent1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>For cost-related queries, provide a clear breakdown of prices for members and non-members, and highlight any discounts or special rates.</description>
+        <developerName>instruction_forcostrel2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_forcostrel2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the event details are incomplete or unavailable, direct users to the AASW event webpage or suggest contacting the support team for more information.</description>
+        <developerName>instruction_iftheevent3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_iftheevent3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Limit the response strictly to 550 characters, including spaces</description>
+        <developerName>instruction_limitthere4</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_limitthere4</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>AASW Event</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>our job is to provide detailed and clear responses about AASW events. Include event names, dates, costs (members and non-members), venues, deadlines, and any other relevant information tailored to user queries.</scope>
+</GenAiPlugin>

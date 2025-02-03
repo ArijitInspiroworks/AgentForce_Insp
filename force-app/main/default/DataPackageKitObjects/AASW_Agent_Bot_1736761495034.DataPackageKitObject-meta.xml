@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataPackageKitObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>AASW_Agent_Bot</masterLabel>
+    <parentDataPackageKitDefinitionName>AASW_Agent_Bot</parentDataPackageKitDefinitionName>
+    <referenceObjectName>Transformed_event_DMO__dlm</referenceObjectName>
+    <referenceObjectType>MktDataModelObject</referenceObjectType>
+</DataPackageKitObject>

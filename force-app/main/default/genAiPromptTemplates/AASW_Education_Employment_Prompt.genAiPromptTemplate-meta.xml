@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</activeVersion>
+    <createdInVersion>62.0</createdInVersion>
+    <developerName>AASW_Education_Employment_Prompt</developerName>
+    <masterLabel>AASW Education &amp; Employment Prompt</masterLabel>
+    <templateVersions>
+        <content>Generate a detailed, user-centric response about education and employment services offered by the Australian Association of Social Workers (AASW). The response should address specific user queries and highlight relevant programs, processes, and guidelines.
+
+Instructions:
+- **Content Focus:**
+ - Provide information about AASW Accredited Programs, including their purpose and benefits for students and professionals.
+ - Explain the Accreditation Process, Accreditation Roles, and any additional FAQs or guidelines related to social work education.
+ - Describe the purpose and updates in the Australian Social Work Education and Accreditation Standards (ASWEAS 2024).
+ - Highlight employment-related topics such as:
+  - Working Overseas: Explain how AASW supports social workers seeking international employment.
+  - Migration &amp; Eligibility Assessment: Detail the process and criteria for migration assessments.
+  - International Qualification Recognition: Summarize the process for recognizing overseas social work qualifications.
+  - New Zealand Mutual Recognition: Provide details on mutual recognition agreements with New Zealand.
+  - Temporary Graduate Visa Subclass 485: Explain its purpose and benefits for international students.
+  - Reassessment, Internal Review, and Appeals: Offer guidance on how professionals can request reassessments or appeal decisions.
+ - Include steps for renewing or reissuing skills assessments and optional migration assessments.
+
+- **Language and Presentation:**
+ - Use professional, clear, and user-friendly language.
+ - Organize the response with headings or bullet points for clarity and readability.
+ - Tailor responses to the user’s specific query for relevance.
+
+- **Exclusions:**
+ - Avoid technical jargon, metadata, or unrelated details.
+ - Exclude repetitive information and ensure all content enhances user understanding.
+
+- **Clarity and User Orientation:**
+ - Ensure the response is actionable and self-contained.
+ - Provide links or guidance for further details if specific information is unavailable.
+ - Limit the response strictly to 300 characters, including spaces.
+
+Mandatory Details:
+	•	Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+	•	Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+	•	Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.
+
+Example Response:
+	•	Mission: AASW supports social workers, advancing social justice and improving community outcomes.
+	•	Structure: Includes branches, practice groups, and a professional board.
+	•	Strategic Plan: Focuses on education, advocacy, and professional development.
+	•	Reference URL: https://www.aasw.asn.au/?page_id=38613
+
+Key Points:
+	1.	The response should only display the URL as plain text, formatted like: https://www.aasw.asn.au/?page_id=XXXXX (replace XXXXX with the correct SourceRecordId__c value).
+	2.	Ensure the SourceRecordId__c is correctly fetched and applied dynamically for each response.
+	3.	No additional formatting like “click here” or hyperlinks should be included. The URL must remain in plain text for direct user access.
+
+Data Source: {!$EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

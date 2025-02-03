@@ -1,0 +1,21 @@
+{
+  "required" : [ "Input:User_Question" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:User_Question" : {
+      "title" : "User Question",
+      "description" : "Collect the user's query related to the AASW Strategic Plan or Networking. Examples include questions about strategic goals, key initiatives, networking groups, or branch connections.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

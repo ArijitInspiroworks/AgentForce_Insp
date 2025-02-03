@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action provides detailed information about AASW’s professional development opportunities. Use it to answer queries about CPD programs, live and on-demand learning, mentoring, employer partner programs, and other professional development resources. Tailor the response to the user’s query.</description>
+    <invocationTarget>AASW</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>AASW Professional Development Prompt</masterLabel>
+</GenAiFunction>

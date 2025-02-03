@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BotVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>v1</fullName>
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Hello welcome to AASW support.  My name is Sophie how can I help you?</message>
+                <messageIdentifier>af05fa87-ae91-4aaf-82a9-ddf1c48e2ea4</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>51c8e835-662b-4433-8a94-7f9812639b81</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>e444bdaa-91bf-43cb-9b27-ec7f0e16ad01</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Welcome</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Hi! I&apos;m your helpful bot.</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Sorry, it looks like something has gone wrong.</message>
+                <messageIdentifier>d4586432-eb80-4336-b921-bd96f7c3f90a</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>1cb6845d-d261-4cac-8e96-c7c278704548</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>3dc22e85-71da-4650-94bc-fdebc21f2f10</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Error_Handling</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Unfortunately, a system error occurred. Let us start again.</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>One moment while I connect you to the next available service representative.</message>
+                <messageIdentifier>f0792e52-34d9-45cf-a825-a7b0a8004645</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>4ff9f625-6931-460b-a115-75311eae6a51</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <conversationSystemMessage>
+                <type>Transfer</type>
+            </conversationSystemMessage>
+            <stepIdentifier>ec67a09b-6091-4045-9832-010bdc9e5e1b</stepIdentifier>
+            <type>SystemMessage</type>
+        </botSteps>
+        <developerName>Transfer_To_Agent</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Transfer To Agent</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <citationsEnabled>false</citationsEnabled>
+    <company>The AASW represents social workers in Australia, promoting social justice, human rights, and excellence. It supports 17,000+ members with resources, advocacy, education, certifications, CPD, ethical guidance, and a social worker directory.</company>
+    <conversationDefinitionPlanners>
+        <genAiPlannerName>AASW_Agentforce_Service_Agent</genAiPlannerName>
+    </conversationDefinitionPlanners>
+    <copilotPrimaryLanguage>en_US</copilotPrimaryLanguage>
+    <copilotSecondaryLanguages>en_GB,en_AU</copilotSecondaryLanguages>
+    <entryDialog>Welcome</entryDialog>
+    <intentDisambiguationEnabled>false</intentDisambiguationEnabled>
+    <intentV3Enabled>false</intentV3Enabled>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <role>The AASW Agent offers instant help with details on membership, pricing, CPD, and events. It guides on ethics, advocacy, social worker directory, migration assessments, legal advice, publications, and updates, for seamless access to resources and services.</role>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <toneType>Casual</toneType>
+</BotVersion>

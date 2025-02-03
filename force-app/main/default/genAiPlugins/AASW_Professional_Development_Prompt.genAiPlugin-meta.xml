@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>AASW Professional Development topic focuses on answering user queries about CPD opportunities, mentoring, workshops, webinars, on-demand learning, employer partner programs, and other resources that support social workers’ career growth and learning.</description>
+    <developerName>AASW_Professional_Development_Prompt</developerName>
+    <genAiFunctions>
+        <functionName>AASW_Professional_Development_Prompt</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always retrieve information specific to CPD opportunities, such as workshops, webinars, on-demand learning, and mentoring programs. Provide structured and clear responses.</description>
+        <developerName>instruction_alwaysretr0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_alwaysretr0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the query involves the Employer Partner Program, explain benefits for employers and employees and provide guidance on joining.</description>
+        <developerName>instruction_ifthequery1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifthequery1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>For queries about mentoring, detail how the program works and how users can participate. Avoid unrelated details or generic responses.</description>
+        <developerName>instruction_forqueries2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_forqueries2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If data is unavailable for a query, recommend visiting the AASW website or contacting support for accurate details.</description>
+        <developerName>instruction_ifdataisun3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifdataisun3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Use headings, bullet points, or short paragraphs for readability if the response requires multiple points or sections.</description>
+        <developerName>instruction_useheading4</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_useheading4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Mandatory Details:
+Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.</description>
+        <developerName>instruction_mandatoryd5</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_mandatoryd5</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Action Name: Generate_Event_URL_Action
+Action Instructions:
+Always use the SourceRecordId__c field from the chunk data to construct the event URL dynamically.
+Ensure the constructed URL is provided as plain text in the format:
+https://www.aasw.asn.au/?page_id={SourceRecordId__c}.
+Validate that the SourceRecordId__c field is correctly retrieved from the data source. If the ID is unavailable, return an error message indicating “Event URL is unavailable.”
+Exclude additional text, formatting, or links. Only display the URL in plain text at the end of the response.
+Ensure no hardcoding of IDs; dynamically fetch SourceRecordId__c for each request.
+3.Output Formatting:
+The response should include only the dynamically constructed event URL in the final output, placed as a standalone plain text line at the end.</description>
+        <developerName>instruction_actionname6</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_actionname6</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Mandatory Details:
+Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.</description>
+        <developerName>instruction_mandatoryd7</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_mandatoryd7</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Action Name: Generate_Event_URL_Action
+Action Instructions:
+Always use the SourceRecordId__c field from the chunk data to construct the event URL dynamically.
+Ensure the constructed URL is provided as plain text in the format:
+https://www.aasw.asn.au/?page_id={SourceRecordId__c}.
+Validate that the SourceRecordId__c field is correctly retrieved from the data source. If the ID is unavailable, return an error message indicating “Event URL is unavailable.”
+Exclude additional text, formatting, or links. Only display the URL in plain text at the end of the response.
+Ensure no hardcoding of IDs; dynamically fetch SourceRecordId__c for each request.
+3.Output Formatting:
+The response should include only the dynamically constructed event URL in the final output, placed as a standalone plain text line at the end.</description>
+        <developerName>instruction_actionname8</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_actionname8</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Limit the response strictly to 400 characters, including spaces.</description>
+        <developerName>instruction_limitthere9</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_limitthere9</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>AASW Professional Development Prompt</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to provide clear, detailed responses about AASW’s CPD, mentoring programs, workshops, webinars, employer partnerships, and learning resources. Tailor answers to user queries and ensure relevance, clarity, and actionable insights.</scope>
+</GenAiPlugin>

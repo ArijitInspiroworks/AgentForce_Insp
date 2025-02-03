@@ -1,0 +1,22 @@
+{
+  "required" : [ "Input:user_input" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:user_input" : {
+      "title" : "user_input",
+      "description" : "Enter the user's query related to AASW Membership FAQs.",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

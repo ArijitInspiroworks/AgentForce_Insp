@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action provides detailed responses about AASW’s News and Events. Use it to answer queries related to recent media releases, newsletters, social work publications, upcoming events, and AASW’s presence in the media. Tailor the response to the user’s query, ensuring clarity and relevance.</description>
+    <invocationTarget>AASW_News_Events_Prompt</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>AASW News &amp; Events Prompt</masterLabel>
+</GenAiFunction>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataPackageKitDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataKitSource>LOCAL</dataKitSource>
+    <dataKitType>NONE</dataKitType>
+    <developerName>AASW_Agent_Bot</developerName>
+    <isDeployed>false</isDeployed>
+    <isEnabled>false</isEnabled>
+    <masterLabel>AASW_Agent_Bot</masterLabel>
+    <versionNumber>7.0</versionNumber>
+</DataPackageKitDefinition>

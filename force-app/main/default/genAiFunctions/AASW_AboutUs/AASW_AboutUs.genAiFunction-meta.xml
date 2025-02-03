@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action retrieves and delivers detailed information from the About Us section of the AASW website, tailored to the user&apos;s specific query or input. Ensure the response is accurate, relevant, and aligned with the content of the About Us section.</description>
+    <invocationTarget>AASW_AboutUs</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>AASW_AboutUs</masterLabel>
+</GenAiFunction>

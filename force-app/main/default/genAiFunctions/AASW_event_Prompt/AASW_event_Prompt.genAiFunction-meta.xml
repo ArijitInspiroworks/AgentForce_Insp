@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action provides detailed responses about events, including costs (for members and non-members), event dates, event names, and other related queries. Ensure the response is concise, professional, and tailored to the user’s query.</description>
+    <invocationTarget>AASW_event_Prompt</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>AASW_event_Prompt</masterLabel>
+    <progressIndicatorMessage>Fetching event details. Please wait…</progressIndicatorMessage>
+</GenAiFunction>

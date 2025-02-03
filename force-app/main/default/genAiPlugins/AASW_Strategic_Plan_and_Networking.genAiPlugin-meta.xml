@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>AASW Strategic Plan and Networking topic focuses on answering user queries about the Strategic Plan 2024-2027, key initiatives, practice groups, branches, and networking opportunities offered to social workers.</description>
+    <developerName>AASW_Strategic_Plan_and_Networking</developerName>
+    <genAiFunctions>
+        <functionName>AASW_Strategic_Plan_and_Networking</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always retrieve information specific to the Strategic Plan, initiatives, and networking. Avoid providing generic responses or unrelated details.</description>
+        <developerName>instruction_alwaysretr0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_alwaysretr0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If a user query cannot be answered directly, suggest visiting the AASW website or contacting the helpdesk for detailed assistance.</description>
+        <developerName>instruction_ifauserque1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifauserque1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Action Name: Generate_Event_URL_Action
+Action Instructions:
+Always use the SourceRecordId__c field from the chunk data to construct the event URL dynamically.
+Ensure the constructed URL is provided as plain text in the format:
+https://www.aasw.asn.au/?page_id={SourceRecordId__c}.
+Validate that the SourceRecordId__c field is correctly retrieved from the data source. If the ID is unavailable, return an error message indicating “Event URL is unavailable.”
+Exclude additional text, formatting, or links. Only display the URL in plain text at the end of the response.
+Ensure no hardcoding of IDs; dynamically fetch SourceRecordId__c for each request.
+3.Output Formatting:
+The response should include only the dynamically constructed event URL in the final output, placed as a standalone plain text line at the end.</description>
+        <developerName>instruction_actionname4</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_actionname4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Mandatory Details:
+Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.</description>
+        <developerName>instruction_mandatoryd5</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_mandatoryd5</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Mandatory Details:
+Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.</description>
+        <developerName>instruction_mandatoryd2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_mandatoryd2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Action Name: Generate_Event_URL_Action
+Action Instructions:
+Always use the SourceRecordId__c field from the chunk data to construct the event URL dynamically.
+Ensure the constructed URL is provided as plain text in the format:
+https://www.aasw.asn.au/?page_id={SourceRecordId__c}.
+Validate that the SourceRecordId__c field is correctly retrieved from the data source. If the ID is unavailable, return an error message indicating “Event URL is unavailable.”
+Exclude additional text, formatting, or links. Only display the URL in plain text at the end of the response.
+Ensure no hardcoding of IDs; dynamically fetch SourceRecordId__c for each request.
+3.Output Formatting:
+The response should include only the dynamically constructed event URL in the final output, placed as a standalone plain text line at the end.</description>
+        <developerName>instruction_actionname3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_actionname3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Limit the response strictly to 400 characters, including spaces.</description>
+        <developerName>instruction_limitthere6</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_limitthere6</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>AASW Strategic Plan and Networking</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to provide detailed responses about AASW’s Strategic Plan, goals, practice groups, and networking opportunities. Tailor answers to user queries and ensure clarity, relevance, and actionable insights in the response.</scope>
+</GenAiPlugin>

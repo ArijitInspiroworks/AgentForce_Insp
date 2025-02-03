@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</activeVersion>
+    <createdInVersion>62.0</createdInVersion>
+    <developerName>AASW_Membership_Prompt</developerName>
+    <masterLabel>AASW Membership Prompt</masterLabel>
+    <templateVersions>
+        <content>Generate a detailed and user-centric response about AASW membership options and benefits. Provide information about membership types (Member, Graduate, Student, Retired), FAQs, and digital badges. Tailor the response to address the specific user query.
+
+Instructions:
+- **Content Focus:**
+ - Explain AASW membership categories and their eligibility criteria.
+ - Include details on membership benefits, such as professional development, digital badges, and networking opportunities.
+ - Provide clear answers to Membership FAQs.
+- **Language and Presentation:**
+ - Structure the response logically, using sections or bullet points as needed.
+ - Use concise, professional, and engaging language.
+- **Exclusions:**
+ - Avoid including unrelated details, technical field labels, or metadata.
+- **Clarity and User Orientation:**
+ - Deliver an easy-to-read and actionable summary.
+ - Ensure the response fully addresses the user’s query without requiring additional context.
+ - Limit the response strictly to 300 characters, including spaces.
+
+Mandatory Details:
+	•	Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+	•	Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+	•	Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.
+
+Example Response:
+	•	Mission: AASW supports social workers, advancing social justice and improving community outcomes.
+	•	Structure: Includes branches, practice groups, and a professional board.
+	•	Strategic Plan: Focuses on education, advocacy, and professional development.
+	•	Reference URL: https://www.aasw.asn.au/?page_id=38613
+
+Key Points:
+	1.	The response should only display the URL as plain text, formatted like: https://www.aasw.asn.au/?page_id=XXXXX (replace XXXXX with the correct SourceRecordId__c value).
+	2.	Ensure the SourceRecordId__c is correctly fetched and applied dynamically for each response.
+	3.	No additional formatting like “click here” or hyperlinks should be included. The URL must remain in plain text for direct user access.
+
+Data Source: {!$EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2.results}
+Query: {!$Input:User_Question}
+</content>
+        <inputs>
+            <apiName>User_Question</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Question</masterLabel>
+            <referenceName>Input:User_Question</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:User_Question}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_6</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__appPage",
+  "title" : "main",
+  "contentBody" : {
+    "currentThemeId" : "Embedded_Service_for_Web_LWR",
+    "headMarkup" : "<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/embedded-messaging-styling.min.css?{ versionKey }\" />\n\n<!-- webruntime-branding-shared stylesheets -->\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/salesforce-lightning-design-system.min.css?{ versionKey }\" />\n\n<style>\n\t/* Minimized Button Styles */\nbody\nbutton.slds-button.minimizedButton {\n    height: 60px;\n    width: 60px;\n    box-sizing: border-box;\n    background-color: #ffffff !important;\n    background: url('https://aasw--aaswiw.sandbox.my.site.com/ESWAASWAgentforceWebDe1735289165369/webruntime/org-asset/32cc3fb1f8/resource/081Bo000000cKov');\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: 37px;\n}\n\nbody\nbutton.slds-button.minimizedButton svg {\n    display: none\n}\n    body div.footerItemsContainer div.fileAttachmentButtonWrapper{\n        display: none;\n    }\n</style>\n\n\n<!-- webruntime-branding-shared stylesheets -->",
+    "isLockerServiceEnabled" : false,
+    "isRelaxedCSPLevel" : true,
+    "templateName" : "esw-template-frame"
+  },
+  "urlName" : "main"
+}

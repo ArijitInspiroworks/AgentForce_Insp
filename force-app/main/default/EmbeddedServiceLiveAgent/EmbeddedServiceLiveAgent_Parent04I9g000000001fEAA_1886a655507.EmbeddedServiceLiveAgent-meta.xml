@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedServiceLiveAgent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <embeddedServiceConfig>Chat</embeddedServiceConfig>
+    <embeddedServiceQuickActions>
+        <embeddedServiceLiveAgent>EmbeddedServiceLiveAgent_Parent04I9g000000001fEAA_1886a655507</embeddedServiceLiveAgent>
+        <order>1</order>
+        <quickActionDefinition>Snapins_Contact_PrechatQuickAction_08h9g000000001U_1685412290679</quickActionDefinition>
+        <quickActionType>Prechat</quickActionType>
+    </embeddedServiceQuickActions>
+    <embeddedServiceQuickActions>
+        <embeddedServiceLiveAgent>EmbeddedServiceLiveAgent_Parent04I9g000000001fEAA_1886a655507</embeddedServiceLiveAgent>
+        <order>2</order>
+        <quickActionDefinition>Snapins_Case_PrechatQuickAction_08h9g000000001U_1685412290848</quickActionDefinition>
+        <quickActionType>Prechat</quickActionType>
+    </embeddedServiceQuickActions>
+    <enabled>true</enabled>
+    <fontSize>Medium</fontSize>
+    <isOfflineCaseEnabled>false</isOfflineCaseEnabled>
+    <isQueuePositionEnabled>true</isQueuePositionEnabled>
+    <liveChatButton>AASW_Chats</liveChatButton>
+    <liveChatDeployment>AASW_Chat</liveChatDeployment>
+    <masterLabel>EmbeddedServiceLiveAgent_Parent04I9g000000001fEAA_1886a655507</masterLabel>
+    <prechatEnabled>true</prechatEnabled>
+    <scenario>Service</scenario>
+</EmbeddedServiceLiveAgent>

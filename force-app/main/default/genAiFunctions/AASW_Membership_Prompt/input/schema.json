@@ -1,0 +1,21 @@
+{
+  "required" : [ "Input:User_Question" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:User_Question" : {
+      "title" : "User Question",
+      "description" : "Collect the user's query related to AASW membership, such as membership benefits, eligibility criteria, or pricing.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

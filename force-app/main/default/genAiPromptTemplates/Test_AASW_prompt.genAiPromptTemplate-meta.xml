@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_7</activeVersion>
+    <createdInVersion>62.0</createdInVersion>
+    <developerName>Test_AASW_prompt</developerName>
+    <masterLabel>AASW_prompt_MembershipFAQ_1</masterLabel>
+    <templateVersions>
+        <content>Generate a detailed, clear, and user-focused response about Australian Association of Social Workers (AASW) using all available information. The output should be tailored to the context of the query and provide a comprehensive summary in a structured and professional manner.
+
+Instructions
+&quot;&quot;&quot;
+- Content Focus:
+ - Address the specific user query directly and comprehensively.
+ - Use the input provided to extract and summarize all relevant details.
+ - Ensure the response aligns with the user&apos;s expectations and context.
+
+- Language and Presentation:
+ - Use simple, clear, and professional language.
+ - Structure the response logically with proper organization, such as through paragraphs, bullet points, or headings if necessary.
+ - Avoid phrases like “from the retrieved data” or similar expressions. The response should feel natural and seamlessly integrated.
+
+- Exclusions:
+ - Do not include technical terms, field labels, metadata, or any unrelated information.
+ - Avoid repetition or extraneous content that does not enhance understanding of the topic.
+
+- Clarity and User Orientation:
+ - Focus on making the response easy to read and actionable.
+ - Provide a self-contained answer that does not require additional explanations or references.
+ - Provide answers in summarized form.
+ - Limit the response strictly to 300 characters, including spaces.
+
+Mandatory Details:
+	•	Event URL: Always include the event URL as plain text, dynamically constructed using the SourceRecordId__c field from the chunk.
+	•	Format: https://www.aasw.asn.au/?page_id={SourceRecordId__c}
+	•	Replace {SourceRecordId__c} with the actual ID dynamically fetched from the data.
+
+Example Response:
+	•	Mission: AASW supports social workers, advancing social justice and improving community outcomes.
+	•	Structure: Includes branches, practice groups, and a professional board.
+	•	Strategic Plan: Focuses on education, advocacy, and professional development.
+	•	Reference URL: https://www.aasw.asn.au/?page_id=38613
+
+Key Points:
+	1.	The response should only display the URL as plain text, formatted like: https://www.aasw.asn.au/?page_id=XXXXX (replace XXXXX with the correct SourceRecordId__c value).
+	2.	Ensure the SourceRecordId__c is correctly fetched and applied dynamically for each response.
+	3.	No additional formatting like “click here” or hyperlinks should be included. The URL must remain in plain text for direct user access.
+
+
+- Data Source : {!$EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2.results}
+- Query : {!$Input:user_input}
+
+</content>
+        <inputs>
+            <apiName>user_input</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>user_input</masterLabel>
+            <referenceName>Input:user_input</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:user_input}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_7</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
