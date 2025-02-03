@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSrcTrgtRelationship xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <definitionCreationType>System</definitionCreationType>
+    <lookupFieldName>Transformed_event_DMO_chunk__dlm.rel_1736399108328_end__c</lookupFieldName>
+    <masterLabel>Transformed_event_DMO_chunk_SourceRecordId_map_Transformed_event_DMO_Post_Id_1736399108328</masterLabel>
+    <owner>DataCloud</owner>
+    <relationshipCardinality>ManyToOne</relationshipCardinality>
+    <sourceFieldName>Transformed_event_DMO_chunk__dlm.SourceRecordId__c</sourceFieldName>
+    <targetEntity xsi:nil="true"/>
+    <targetFieldName>Transformed_event_DMO__dlm.Post_Id__c</targetFieldName>
+</FieldSrcTrgtRelationship>

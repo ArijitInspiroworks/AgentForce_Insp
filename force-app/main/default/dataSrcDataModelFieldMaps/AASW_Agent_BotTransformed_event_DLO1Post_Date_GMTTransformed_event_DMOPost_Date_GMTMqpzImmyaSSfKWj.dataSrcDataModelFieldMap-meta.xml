@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataSrcDataModelFieldMap xmlns="http://soap.sforce.com/2006/04/metadata">
+    <filterApplied>false</filterApplied>
+    <masterLabel>AASW_Agent_BotTransformed_event_DLO1Post_Date_GMTTransformed_event_DMOPost_Date_GMTMqpzImmyaSSfKWj</masterLabel>
+    <sourceField>Transformed_event_DLO1.Post_Date_GMT__c</sourceField>
+    <targetField>Transformed_event_DMO__dlm.Post_Date_GMT__c</targetField>
+    <templateVersion>1</templateVersion>
+    <versionNumber>1.0</versionNumber>
+</DataSrcDataModelFieldMap>

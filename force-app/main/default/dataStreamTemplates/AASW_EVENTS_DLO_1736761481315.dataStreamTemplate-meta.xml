@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataStreamTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataConnectionSourceParameters>
+        <fullName>objectName</fullName>
+        <paramName>objectName</paramName>
+        <value>wp_postEvent_view_2</value>
+    </dataConnectionSourceParameters>
+    <dataSourceBundleDefinition>AASW_dataStream</dataSourceBundleDefinition>
+    <dataSourceObject>AASW_EVENTS_DLO1</dataSourceObject>
+    <masterLabel>AASW_EVENTS_DataStream</masterLabel>
+    <objectCategory>Salesforce_SFDCReferenceModel_0_93.Related</objectCategory>
+    <refreshFrequency>HOURLY</refreshFrequency>
+    <refreshMode>FULL_REFRESH</refreshMode>
+    <sourceObjectName>AASW_EVENTS_DLO</sourceObjectName>
+    <streamType>INGEST</streamType>
+    <templateVersion>1</templateVersion>
+</DataStreamTemplate>
