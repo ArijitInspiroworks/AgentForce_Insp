@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_7</activeVersion>
+    <activeVersion>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_8</activeVersion>
     <createdInVersion>62.0</createdInVersion>
     <description>This is a prompt for the about us Section of AASW website</description>
     <developerName>AASW_AboutUs</developerName>
@@ -42,8 +42,8 @@ Key Points:
 	2.	Ensure the SourceRecordId__c is correctly fetched and applied dynamically for each response.
 	3.	No additional formatting like “click here” or hyperlinks should be included. The URL must remain in plain text for direct user access.
 
-Data Source: {!$EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2.results}
-Query: {!$Input:User_Question}
+Data Source: 
+Query: 
 </content>
         <inputs>
             <apiName>User_Question</apiName>
@@ -54,17 +54,7 @@ Query: {!$Input:User_Question}
         </inputs>
         <primaryModel>sfdc_ai__DefaultOpenAIGPT4_32k</primaryModel>
         <status>Published</status>
-        <templateDataProviders>
-            <definition>invocable://getEinsteinRetrieverResults/Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</definition>
-            <parameters>
-                <definition>primitive://String</definition>
-                <isRequired>true</isRequired>
-                <parameterName>searchText</parameterName>
-                <valueExpression>{!$Input:User_Question}</valueExpression>
-            </parameters>
-            <referenceName>EinsteinSearch:Default_Trasformed_POSTPAGE_DMO_Retriever_1Cx_SE151488ab2</referenceName>
-        </templateDataProviders>
-        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_7</versionIdentifier>
+        <versionIdentifier>MfpVhqYhVqzGDbEA6bvwZQzVsIB4LzmQBlY3/4fU8RE=_8</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>
